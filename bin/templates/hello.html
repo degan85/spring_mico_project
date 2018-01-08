@@ -1,0 +1,17 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<script src="https://unpkg.com/vue"></script>
+	<meta charset="UTF-8" /> 
+	<title>Thymeleaf</title> 
+</head> 
+<body> 
+	<h1>Thymeleaf</h1> 
+	
+	<div id="app">
+ 			{{ message }}
+	</div>
+	<div th:include="footer :: copy"></div>
+	<script src='/js/hello.js'></script>
+</body> 
+</html>
