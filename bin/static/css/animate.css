@@ -1,3 +1,19 @@
+/* mobile */
+
+.blockly_table.mobile td#blockly_main{
+	width: 100%;
+}
+
+
+/* pc */
+
+.blockly_table td#blockly_main{
+	width: 60%;
+}
+
+
+/*-----------------*/
+
 #container {
 
     position: relative;
@@ -7,7 +23,7 @@
 #size{
     width: 400px;
 }
-#girl {
+#object {
     position: absolute !important;
     top: 0px;
     left: 0px;
