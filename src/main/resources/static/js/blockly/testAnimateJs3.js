@@ -42,7 +42,7 @@ var activityData = function(){
     };
 }();
 
-
+var filter = "win16|win32|win64|mac|macintel";
 var started_position = {
     x : 0,
     y : 0
@@ -62,6 +62,9 @@ var $background_img = $('#background_img');
 var $run_button = $('#run_button');
 /*var $save_button = $('#save_button');*/
 var $refresh_button = $('#refresh_button');
+
+var $toggleMobileAndPc = $('#toggleMobileAndPc');
+var isMobile = false; 
 
 var selected_easing;
 var selected_speed;
@@ -89,6 +92,21 @@ var is_background_img_top_over;
 $('#imgg').attr("src", "/fish.png?"+d.getTime());*/
 
 $(function(){
+
+	if ( navigator.platform ) { 
+		if ( filter.indexOf( navigator.platform.toLowerCase() ) < 0 ) { 
+			//mobile 
+			$('.blockly_table').addClass('mobile');
+	    	blocklyArea.hidden = true;
+			
+		} else { 
+			//pc
+			$('.blockly_table').removeClass('mobile');
+			blocklyArea.hidden = false;
+		} 
+	}
+	
+
     $running_object = $girl;
     story = '0';
 
@@ -101,7 +119,19 @@ $(function(){
         set_position_resize();
         // onresize();
     }).resize();
-
+    
+    $toggleMobileAndPc.click(function() {
+    	if(isMobile) {
+    		$('.blockly_table').addClass('mobile');
+	    	blocklyArea.hidden = true;
+	    	isMobile=false;
+    	}else{
+    		$('.blockly_table').removeClass('mobile');
+    		blocklyArea.hidden = false;
+    		isMobile=true;
+    	} 
+    });
+    
     $run_button.click(function(){
         set_init();
         runCode();
