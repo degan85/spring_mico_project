@@ -32,4 +32,8 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile('org.springframework.boot:spring-boot-starter-social-facebook')
+	
+	compile group: 'org.projectlombok', name: 'lombok', version: '1.16.8' 
+	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4' 
+	compile group: 'commons-io', name: 'commons-io', version: '2.5'
 }
