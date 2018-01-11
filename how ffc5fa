@@ -1,0 +1,41 @@
+[33mcommit ffc5fa945da08253b6f0811ded072ba06566d290[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: cho <degan8535@gmail.com>
+Date:   Thu Jan 11 19:15:24 2018 +0900
+
+    "Added JPA and file upload"
+
+[33mcommit 5f9521d923802310473ace94bdee345d4f3770f4[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: cho <degan8535@gmail.com>
+Date:   Wed Jan 10 18:14:06 2018 +0900
+
+    Added only fileupload(수정필요)
+
+[33mcommit d1b4bbd11561ef6276553a9b6c66fb1937536b8e[m
+Author: cho <degan8535@gmail.com>
+Date:   Wed Jan 10 17:15:39 2018 +0900
+
+    Fixed rate and ...
+
+[33mcommit a39944c17743147e6d3d4e5e8675bb6a4dcbb3d5[m
+Author: cho <degan8535@gmail.com>
+Date:   Wed Jan 10 16:01:55 2018 +0900
+
+    Added mobile and PC version
+
+[33mcommit 1e843b0fc2bd23ac765879300537315d17a7cbee[m
+Author: cho <degan8535@gmail.com>
+Date:   Mon Jan 8 18:55:36 2018 +0900
+
+    Add animate blockly and img
+
+[33mcommit 0ef9f3c5975e1246ff0b9daf5c255f681fe27000[m
+Author: cho <degan8535@gmail.com>
+Date:   Mon Jan 8 16:28:51 2018 +0900
+
+    Set spring boot & vue
+
+[33mcommit 6c5203126afb228ea373fa4db1e9ca52402c573f[m
+Author: cho <degan8535@gmail.com>
+Date:   Mon Jan 8 16:26:57 2018 +0900
+
+    commit .gitignore

@@ -24,13 +24,20 @@ repositories {
 
 
 dependencies {
+	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-aop')
+	
+	// JPA Data (We are going to use Repositories, Entities, Hibernate, etc...)
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile group: 'net.sourceforge.nekohtml', name: 'nekohtml', version: '1.9.22'
-	runtime('mysql:mysql-connector-java')
-	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	
+	// Use MySQL Connector-J
+	compile 'mysql:mysql-connector-java'
+	
+	testCompile("junit:junit")
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	
 	compile('org.springframework.boot:spring-boot-starter-social-facebook')
 	
 	compile group: 'org.projectlombok', name: 'lombok', version: '1.16.8' 
