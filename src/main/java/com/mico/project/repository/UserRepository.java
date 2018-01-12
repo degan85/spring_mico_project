@@ -1,12 +1,14 @@
 package com.mico.project.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.mico.project.domain.Role;
 import com.mico.project.domain.User;
 
-// This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
-// CRUD refers Create, Read, Update, Delete
-
-public interface UserRepository extends CrudRepository<User, Long> {
-
+public interface UserRepository extends JpaRepository<User, Long>{
+  public User findByUsername(String username);
+  public User findById(Long id);
+  public List<Role> findRolesByUsername(String username);
 }
