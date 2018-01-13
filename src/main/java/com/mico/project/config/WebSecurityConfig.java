@@ -23,14 +23,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   
   @Override
   protected void configure(HttpSecurity http) throws Exception{
-	// h2 console 사용을 위한 설정 
-    http.csrf().ignoringAntMatchers("/h2console/**");
-    http.headers().frameOptions().sameOrigin();
     
     http
       .authorizeRequests()
         // 해당 url을 허용한다. 
-      	.antMatchers("/resources/**","/loginError","/registration","/h2console/**").permitAll()
+      	.antMatchers("/home/**","/resources/**","/loginError","/registration").permitAll()
         // admin 폴더에 경우 admin 권한이 있는 사용자에게만 허용 
       	.antMatchers("/admin/**").hasAuthority("ADMIN")
       	// user 폴더에 경우 user 권한이 있는 사용자에게만 허용

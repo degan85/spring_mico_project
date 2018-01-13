@@ -21,7 +21,7 @@ public class FileSystemStorageService implements StorageService {
 	// todo 파일명 변환
 	// todo DB 저장
 	
-    private final Path rootLocation = Paths.get("D:\\temp\\spring");
+    private final Path rootLocation = Paths.get("E:\\temp\\spring");
     private String addFileName = "123123";
 
 //    @Autowired

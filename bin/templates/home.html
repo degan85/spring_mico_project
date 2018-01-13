@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="/css/styles.min.css">
+</head>
+
+<body>
+	<!-- <div th:include="header :: copy"></div> -->
+	
+	<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">mico project </a>
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        </div>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li role="presentation"><a href="../hello/">First Item</a></li>
+                <li role="presentation"><a href="#">Second Item</a></li>
+                <li role="presentation"><a href="#">Third Item</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+	
+	
+    <div class="jumbotron hero" style="background-image:url(&quot;/img/color-pencil-drawing-coloring-colored-pencils-159825.jpeg&quot;);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-push-7 phone-preview">
+                    <div class="iphone-mockup"><img src="/img/iphone.svg" class="device">
+                        <div class="screen" style="padding:0px;background-image:url(&quot;/img/pexels-photo-704146.jpeg&quot;);"></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-pull-3 get-it">
+                    <h1 style="color:#f52121;">Drawing and Coding</h1>
+                    <p style="color:rgb(244,240,242);">.</p>
+                    <p><a class="btn btn-primary btn-lg" role="button" href="#" style="background-color:rgb(184,33,23);border-color:#9c1212"><i class="fa fa-rocket"></i> Registration</a><a class="btn btn-success btn-lg" role="button" href="#"><i class="fa fa-unlock-alt"></i> login</a>
+                        <a class="btn btn-primary btn-lg" role="button" href="#"><i class="fa fa-facebook-square"></i> facebook login </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="background-color:rgba(58,47,47,0);background-image:url(&quot;/img/footer.png&quot;);background-size:cover;background-repeat:no-repeat;height:366px;">
+        <div class="container">
+            <h1 class="text-center" style="font-family:ABeeZee, sans-serif;font-size:46px;color:rgb(0,0,0);">mico project</h1>
+            <hr>
+            <ul class="list-inline" id="text_decoration" style="margin-top:30px;font-family:ABeeZee, sans-serif;">
+                <li><a href="#" class="decoration" style="color:rgb(0,0,0);font-size:20px;margin-right:10px;">Home</a></li>
+                <li><a href="#" style="font-size:20px;color:rgb(0,0,0);margin-right:10px;">Services</a></li>
+                <li><a href="#" style="font-size:20px;color:rgb(0,0,0);margin-right:10px;">About</a></li>
+                <li><a href="#" style="color:rgb(0,0,0);font-size:20px;margin-right:10px;">Terms</a></li>
+                <li><a href="#" style="color:rgb(0,0,0);font-size:20px;">Privacy Policy</a></li>
+            </ul>
+            <p class="text-center" style="margin-top:30px;margin-bottom:15px;"><a href="#" style="font-size:35px;margin-right:30px;"><i class="fa fa-facebook-square" style="color:rgb(0,0,0);margin-right:0px;"></i></a><a href="#" style="font-size:35px;margin-right:30px;"><i class="fa fa-instagram" style="color:rgb(0,0,0);margin-right:0px;"></i></a>
+                <a
+                href="#" style="font-size:35px;margin-right:30px;"><i class="icon ion-social-twitter" style="color:rgb(0,0,0);margin-right:2px;"></i></a><a href="#" style="font-size:35px;margin-right:30px;"><i class="icon ion-social-snapchat" style="color:rgb(0,0,0);margin-right:0px;"></i></a><a href="#"
+                    style="font-size:35px;"><i class="fa fa-google-plus-square" style="color:rgb(0,0,0);"></i></a></p>
+            <p class="text-center" style="color:rgb(193,184,184);font-family:ABeeZee, sans-serif;margin-bottom:23px;"> moco project@ 2017</p>
+        </div>
+    </div>
+    <section class="testimonials"></section>
+</body>
+    <!-- <div th:include="footer :: copy"></div> -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

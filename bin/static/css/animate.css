@@ -50,16 +50,9 @@ table td.table_button {
     padding: 10px;
 }
 .navbar {
-    margin-bottom: 0;
-    border-radius: 0;
+	background-color: #f8f8f8;
 }
 
-/* Set black background color, white text and some padding */
-footer {
-    background-color: #555;
-    color: white;
-    padding: 15px;
-}
 /* input {
   -webkit-user-select: initial;
   -khtml-user-select: initial;
