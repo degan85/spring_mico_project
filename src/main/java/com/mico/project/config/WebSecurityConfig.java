@@ -27,7 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     http
       .authorizeRequests()
         // 해당 url을 허용한다. 
-      	.antMatchers("/home/**","/resources/**","/loginError","/registration").permitAll()
+      	.antMatchers("/css/**", "/js/**", "/img/**","/home/**","/resources/**","/loginError","/registration").permitAll()
         // admin 폴더에 경우 admin 권한이 있는 사용자에게만 허용 
       	.antMatchers("/admin/**").hasAuthority("ADMIN")
       	// user 폴더에 경우 user 권한이 있는 사용자에게만 허용

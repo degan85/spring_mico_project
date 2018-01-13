@@ -2,18 +2,53 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="/css/styles.min.css">
 <title>Login</title>
 </head>
 <body>
-	login
-	<form th:action="@{/login}" method="post">
-		name: <input type="text" name="username" id="username"
-			th:value="${username}" /><br />
-		p w: <input type="password" name="password" id="password" /><br />
-		<div th:if="${logout}">You have been logged out successfully</div>
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="../home">mico project </a>
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        </div>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li role="presentation"><a href="../hello">First Item</a></li>
+                <li role="presentation"><a href="#">Second Item</a></li>
+                <li role="presentation"><a href="#">Third Item</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="login-clean" style="background-color:rgb(255,255,255);">
+    <form th:action="@{/login}" method="post" style="color:rgb(178,71,244);">
+        <h2 class="sr-only">Login Form</h2>
+        <div class="illustration"><i class="icon ion-paintbrush" style="color:rgb(178,71,244);"></i></div>
+        <div class="form-group"><input class="form-control" type="email" name="username" placeholder="Email"></div>
+        <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+     	
+     	<div th:if="${logout}">You have been logged out successfully</div>
 		<div th:if="${error}">Invalid username and password.</div>
-		<input type="submit" value="sign in" />
-	</form>
-	<a href="/registration">registration</a>
+        
+        <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color:rgb(178,71,244);">Log In</button></div>
+        <a href="#" class="forgot">Forgot your email or password?</a>
+        
+        <div class="form-group"><button class="btn btn-primary btn-block" style="background-color: rgb(14, 246, 117);" type="button" onclick="location.href='../registration'"><i class="fa fa-rocket"></i> Registration</button></div>
+        <div class="form-group"><button class="btn btn-primary btn-block" style="background-color: rgb(71, 116, 244);" type="submit"><i class="fa fa-facebook-square"></i> facebook login </button></div>
+    </form>
+        
+</div>
+	
+	<div th:include="footer :: copy"></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>

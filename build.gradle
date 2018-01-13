@@ -40,8 +40,8 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-social-facebook')
 	
 	compile("org.springframework.boot:spring-boot-starter-security")
-
-	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity4', version: '3.0.2.RELEASE'
+	
+	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity4', version: '2.1.2.RELEASE'
 	compile group: 'org.projectlombok', name: 'lombok', version: '1.16.8' 
 	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4' 
 	compile group: 'commons-io', name: 'commons-io', version: '2.5'

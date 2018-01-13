@@ -1,17 +1,21 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
 	<script src="https://unpkg.com/vue"></script>
 	<!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/styles.min.css">
-	<link rel="stylesheet" type="text/css" href="/css/animate.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="/css/styles.min.css">	<link rel="stylesheet" type="text/css" href="/css/animate.css">
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
@@ -24,7 +28,7 @@
 	<nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="../home/">mico project </a>
+                <a class="navbar-brand" href="../home">mico project </a>
                 <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
             </div>
             <div class="collapse navbar-collapse" id="navcol-1">
@@ -245,6 +249,7 @@
     </tr>
 	</table>
 
+
 	<!-- Upload file form -->
   <form id="upload-file-form">
     <label for="upload-file-input">Upload your file:</label>
@@ -253,7 +258,7 @@
     <span id="upload-file-message"></span>
   </form>
   
-  
+  <div th:include="footer :: copy"></div>
   <!-- Javascript functions -->
   <script>
   
@@ -288,10 +293,7 @@
     } // function uploadFile
   </script>
 	
-	<div th:include="footer :: copy"></div>
-	
 	<script src='/js/hello.js'></script>
-	
     <script src='/js/blockly/blockly_compressed.js'></script>
     <script src='/js/blockly/blocks_compressed.js'></script>
     <script src='/js/blockly/javascript_compressed.js'></script>

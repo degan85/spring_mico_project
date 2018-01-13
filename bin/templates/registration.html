@@ -2,10 +2,33 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="/css/styles.min.css">
 <title>Registration</title>
 </head>
 <body>
-Registration
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="../home">mico project </a>
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        </div>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li role="presentation"><a href="../hello">First Item</a></li>
+                <li role="presentation"><a href="#">Second Item</a></li>
+                <li role="presentation"><a href="#">Third Item</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Registration
 <form name="userForm" th:action="@{/registration}" method="post">
   name : <input type="text" name="username" id="username"/>
   password : <input type="text" name="password" id="password"/>
@@ -14,7 +37,27 @@ Registration
   USER  <input type="checkbox" name="roles" value="USER" />
   <hr/>
   <input type="submit" value="join" />
-</form>
+</form> -->
+
+<div class="register-photo">
+        <div class="form-container">
+            <div class="image-holder" style="background-image:url(&quot;/img/pexels-photo-707193.jpeg&quot;);"></div>
+            <form name="userForm" th:action="@{/registration}" method="post">
+                <h2 class="text-center"><strong>Create</strong> an account.</h2>
+                <div class="form-group"><input class="form-control" type="email" name="username" placeholder="Email"></div>
+                <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+                <!-- <div class="form-group"><input class="form-control" type="password" name="password-repeat" placeholder="Password (repeat)"></div> -->
+                <div class="form-group">
+                    <!-- <div class="checkbox"><label class="control-label"><input type="checkbox">I agree to the license terms.</label></div> -->
+                </div>
+    			<input type="checkbox" name="roles" value="USER" checked hidden="true"/>
+                <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Sign Up</button></div><a href="../login" class="already">You already have an account? Login here.</a>
+           	</form>
+        </div>
+    </div>
+    <div th:include="footer :: copy"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </body>
 </html>

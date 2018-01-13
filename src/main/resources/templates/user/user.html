@@ -9,5 +9,14 @@
     <span sec:authentication="name"></span>
     <span sec:authentication="principal.authorities"></span>
     only user!
+    
+    <sec:authorize ifNotGranted="USER">
+        	<div>없을때</div>
+    </sec:authorize>
+
+    <!-- 회원 권한이 있을 때 -->
+    <sec:authorize ifAnyGranted="USER">
+        <div>있을 때</div>
+    </sec:authorize>
 </body>
 </html>

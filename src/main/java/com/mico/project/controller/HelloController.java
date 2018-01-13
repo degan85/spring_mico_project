@@ -23,7 +23,7 @@ import com.mico.project.repository.UserRepository;
 @RequestMapping("/hello") 
 public class HelloController { 
 	
-	@RequestMapping(value="/", method=RequestMethod.GET) 
+	@RequestMapping(value="", method=RequestMethod.GET) 
 	public String hello() { return "/hello"; } 
 
 	
