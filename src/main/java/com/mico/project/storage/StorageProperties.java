@@ -1,17 +1,22 @@
 package com.mico.project.storage;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
-@ConfigurationProperties("classpath:filelocation.yml")
+//@ConfigurationProperties("classpath:filelocation.yml")
+
+@Component
 public class StorageProperties {
 
     /**
      * Folder location for storing files
      */
-    private String location = "D:\\temp";
+	@Value("${file}")
+    private String location;
+//    = "D:\\temp";
 
     public String getLocation() {
-        return location;
+        return "aaa";
     }
 
     public void setLocation(String location) {

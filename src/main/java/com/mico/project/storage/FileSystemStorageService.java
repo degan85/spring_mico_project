@@ -7,6 +7,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
@@ -16,18 +18,17 @@ import org.springframework.web.multipart.MultipartFile;
 @Service
 public class FileSystemStorageService implements StorageService {
 
-	
+//	@Autowired
+//	private StorageProperties sp;
 	// todo 프로퍼티로 경로 연결
 	// todo 파일명 변환
 	// todo DB 저장
 	
-    private final Path rootLocation = Paths.get("E:\\temp\\spring");
-    private String addFileName = "123123";
 
-//    @Autowired
-//    public FileSystemStorageService(StorageProperties properties) {
-//        this.rootLocation = Paths.get(properties.getLocation());
-//    }
+	private final String pathString = "D:\\temp\\spring";
+	
+	private Path rootLocation = Paths.get(pathString);
+    private String addFileName = "123123";
 
     private String changeFileName(MultipartFile file) {
     	String originalFilename = file.getOriginalFilename();

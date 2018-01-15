@@ -25,12 +25,13 @@ import com.mico.project.storage.StorageService;
 @Controller
 public class FileUploadController {
 
-	private final StorageService storageService;
+	@Autowired
+	private StorageService storageService;
 
-    @Autowired
-    public FileUploadController(StorageService storageService) {
-        this.storageService = storageService;
-    }
+//    @Autowired
+//    public FileUploadController(StorageService storageService) {
+//        this.storageService = storageService;
+//    }
 
     @GetMapping("/file")
     public String listUploadedFiles(Model model) throws IOException {
