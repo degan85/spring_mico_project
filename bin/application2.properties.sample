@@ -18,3 +18,8 @@ spring.http.multipart.max-request-size=1MB
 # hibernate 
 spring.jpa.hibernate.ddl-auto=create
 
+#redis
+spring.session.store-type=REDIS
+spring.redis.host=127.0.0.1
+spring.redis.port=6379
+# spring.redis.password=
