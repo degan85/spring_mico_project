@@ -29,6 +29,6 @@ public class PropertiesTest {
 	
 //	@Test
 //	public void filePathPropertiesTest2() {
-//		assertThat(fs.getTest(), is("D:\\temp\\spring")); 
+//		assertThat(fs.getPathTest(), is("D:\\temp\\spring")); 
 //	}
 }

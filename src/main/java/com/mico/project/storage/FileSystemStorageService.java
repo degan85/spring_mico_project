@@ -9,24 +9,28 @@ import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.util.FileSystemUtils;
 import org.springframework.web.multipart.MultipartFile;
 
-@Service
+@Service("StorageService")
 public class FileSystemStorageService implements StorageService {
 
 //	@Autowired
-//	private StorageProperties sp;
+//	StorageProperties storageProperties;
+	
 	// todo 프로퍼티로 경로 연결
 	// todo 파일명 변환
 	// todo DB 저장
 	
 
 	private final String pathString = "D:\\temp\\spring";
-	
+//	private String pathTest = storageProperties.getLocation(); 
+
 	private Path rootLocation = Paths.get(pathString);
     private String addFileName = "123123";
 
@@ -43,7 +47,6 @@ public class FileSystemStorageService implements StorageService {
     
     @Override
     public void store(MultipartFile file) {
-        
     	
     	try {
             if (file.isEmpty()) {
