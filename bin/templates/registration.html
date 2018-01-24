@@ -44,9 +44,12 @@
             <div class="image-holder" style="background-image:url(&quot;/img/pexels-photo-707193.jpeg&quot;);"></div>
             <form name="userForm" th:action="@{/registration}" method="post">
                 <h2 class="text-center"><strong>Create</strong> an account.</h2>
-                <div class="form-group"><input class="form-control" type="email" name="username" placeholder="Email"></div>
+                <div class="form-group"><input class="form-control" type="text" name="username" placeholder="Username"></div>
+                <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
                 <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-                <!-- <div class="form-group"><input class="form-control" type="password" name="password-repeat" placeholder="Password (repeat)"></div> -->
+                <div class="form-group"><input class="form-control" type="password" name="password-repeat" placeholder="Password (repeat)"></div>
+                
+                <div th:if=${error}>이미 존재하는 Username 또는 Email입니다.</div>
                 <div class="form-group">
                     <!-- <div class="checkbox"><label class="control-label"><input type="checkbox">I agree to the license terms.</label></div> -->
                 </div>
@@ -55,6 +58,7 @@
            	</form>
         </div>
     </div>
+    
     <div th:include="footer :: copy"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>

@@ -9,7 +9,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -27,7 +26,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     http
       .authorizeRequests()
         // 해당 url을 허용한다. 
-      	.antMatchers("/css/**", "/js/**", "/img/**","/home/**","/resources/**","/loginError","/registration").permitAll()
+      	.antMatchers(
+      			 "/css/**"
+      			, "/js/**"
+      			, "/img/**"
+      			, "/home/**"
+      			, "/resources/**"
+      			, "/loginError"
+      			, "/registration"
+      			, "/error"
+      			).permitAll()
         // admin 폴더에 경우 admin 권한이 있는 사용자에게만 허용 
       	.antMatchers("/admin/**").hasAuthority("ADMIN")
       	// user 폴더에 경우 user 권한이 있는 사용자에게만 허용
@@ -39,8 +47,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .successHandler(new CustomAuthenticationSuccess()) // 로그인 성공 핸들러 
         .failureHandler(new CustomAuthenticationFailure()) // 로그인 실패 핸들러 
         .permitAll()
-        .and()
-      .logout()
+      .and()
+      	.logout()
+      	.deleteCookies("SESSION")
         .permitAll()
         .and()
        .exceptionHandling().accessDeniedPage("/403"); // 권한이 없을경우 해당 url로 이동

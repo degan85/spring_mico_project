@@ -22,6 +22,8 @@ import com.mico.project.repository.UserRepository;
 @Controller 
 @RequestMapping("/hello") 
 public class HelloController { 
+
+	private static String UPLOADED_FOLDER = "D://temp//";
 	
 	@RequestMapping(value="", method=RequestMethod.GET) 
 	public String hello() { return "/hello"; } 
@@ -35,10 +37,6 @@ public class HelloController {
     public String ajaxUpload() {
         return "ajaxUpload";
     }
-     
-    
-    private static String UPLOADED_FOLDER = "D://temp//";
-    
 
     @RequestMapping(value = "/fileUpload", method = RequestMethod.POST)
     @ResponseBody

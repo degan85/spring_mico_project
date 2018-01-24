@@ -33,7 +33,7 @@
     <form th:action="@{/login}" method="post" style="color:rgb(178,71,244);">
         <h2 class="sr-only">Login Form</h2>
         <div class="illustration"><i class="icon ion-paintbrush" style="color:rgb(178,71,244);"></i></div>
-        <div class="form-group"><input class="form-control" type="email" name="username" placeholder="Email"></div>
+        <div class="form-group"><input class="form-control" type="text" name="username" placeholder="Username"></div>
         <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
      	
      	<div th:if="${logout}">You have been logged out successfully</div>
@@ -43,7 +43,7 @@
         <a href="#" class="forgot">Forgot your email or password?</a>
         
         <div class="form-group"><button class="btn btn-primary btn-block" style="background-color: rgb(14, 246, 117);" type="button" onclick="location.href='../registration'"><i class="fa fa-rocket"></i> Registration</button></div>
-        <div class="form-group"><button class="btn btn-primary btn-block" style="background-color: rgb(71, 116, 244);" type="submit"><i class="fa fa-facebook-square"></i> facebook login </button></div>
+        <!-- <div class="form-group"><button class="btn btn-primary btn-block" style="background-color: rgb(71, 116, 244);" type="submit"><i class="fa fa-facebook-square"></i> facebook login </button></div> -->
     </form>
         
 </div>

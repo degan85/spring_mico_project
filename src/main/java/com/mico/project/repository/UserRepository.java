@@ -8,7 +8,8 @@ import com.mico.project.domain.Role;
 import com.mico.project.domain.User;
 
 public interface UserRepository extends JpaRepository<User, Long>{
-  public User findByUsername(String username);
+public User findByUsername(String username);
+  public User findByEmail(String email);
   public User findById(Long id);
   public List<Role> findRolesByUsername(String username);
 }
