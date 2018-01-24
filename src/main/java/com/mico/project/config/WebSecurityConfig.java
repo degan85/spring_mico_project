@@ -39,20 +39,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // admin 폴더에 경우 admin 권한이 있는 사용자에게만 허용 
       	.antMatchers("/admin/**").hasAuthority("ADMIN")
       	// user 폴더에 경우 user 권한이 있는 사용자에게만 허용
-        .antMatchers("/user/**").hasAuthority("USER")
-        .anyRequest().authenticated()
-        .and()
+      	.antMatchers("/user/**").hasAuthority("USER")
+       	.anyRequest().authenticated()
+       	.and()
       .formLogin()
         .loginPage("/login")
         .successHandler(new CustomAuthenticationSuccess()) // 로그인 성공 핸들러 
         .failureHandler(new CustomAuthenticationFailure()) // 로그인 실패 핸들러 
         .permitAll()
-      .and()
-      	.logout()
+        .and()
+      .logout()
       	.deleteCookies("SESSION")
         .permitAll()
         .and()
-       .exceptionHandling().accessDeniedPage("/403"); // 권한이 없을경우 해당 url로 이동
+      .exceptionHandling().accessDeniedPage("/403"); // 권한이 없을경우 해당 url로 이동
   }
   
   @Autowired
