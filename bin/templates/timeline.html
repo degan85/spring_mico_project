@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta id="_csrf" name="_csrf" th:content="${_csrf.token}"/>
+<!-- default header name is X-CSRF-TOKEN -->
+<meta id="_csrf_header" name="_csrf_header" th:content="${_csrf.headerName}"/>
+
+    <!-- <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="/css/styles.min.css">
+<!--     <link rel="stylesheet" href="/css/tiemeline.css"> -->
+    <script src="https://unpkg.com/vue@2.1.3/dist/vue.js"></script>
+<title>Timeline</title>
+<style>
+    .timeline {
+      outline: none;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    .container {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 500px;
+    }
+    .container .search-box {
+      padding: 10px;
+      margin: 20px 0;
+      border: 1px solid black;
+      border-radius: 5px;
+    }
+    .container .timeline {
+      position: relative;
+      border-left: 1px solid black;
+    }
+    .container .timeline .date {
+      display: inline-block;
+      border: 1px solid black;
+      border-radius: 5px;
+      padding: 5px;
+      position: relative;
+      left: 15px;
+      margin: 15px 0;
+    }
+    .container .timeline .date:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -16px;
+      border: 1px solid black;
+      width: 14px;
+    }
+    .container .timeline .article {
+      position: relative;
+      left: 20px;
+      -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    .container .timeline .article:hover {
+      -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4);
+      box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4);
+    }
+    .container .timeline .article a {
+      color: green;
+      text-decoration: none;
+    }
+    .container .timeline .article .article-date {
+      font-weight: 300;
+      font-size: 14px;
+    }
+    .container .timeline .article .dot {
+      display: block;
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: green;
+      left: -25.5px;
+      top: calc(50% - 5px);
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="../home">mico project </a>
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        </div>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li role="presentation"><a href="../hello">First Item</a></li>
+                <li role="presentation"><a href="#">Second Item</a></li>
+                <li role="presentation"><a href="#">Third Item</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div>
+  <div id='app'>
+    <input id="inputSubject" v-model="newSubject">
+    <input id="inputDate" v-model="newDate">
+    <input id="inputTitle" v-model="newTitle">
+    <input id="inputTeaser" v-model="newTeaser">
+    <button @click="addSubject">추가</button>
+	<div><button @click="showList">리스트 보기</button></div>
+	
+    <blog-articles :dates-articles='datesArticles'></blog-articles>
+  </div>
+</div>
+
+		
+	<div th:include="footer :: copy"></div>
+	<script src="/js/timeline.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		var token = $("meta[name='_csrf']").attr("content");
+		var header = $("meta[name='_csrf_header']").attr("content");
+ 
+		$(function() {
+		    $(document).ajaxSend(function(e, xhr, options) {
+		        xhr.setRequestHeader(header, token);
+		    });
+		});
+</script>
+
+</body>
+</html>
