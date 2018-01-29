@@ -8,6 +8,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.mico.project.domain.User;
@@ -28,5 +30,12 @@ public class TestUserService {
 		User user = userService.findByEmail(email);
 		assertThat(user.getEmail(), is(email));
 		System.out.println(user.getEmail());
+	}
+	
+	@Test
+	public void getUserId() {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+	    String name = auth.getName(); //get logged in username
+	    System.out.println("@@@ : "+name);
 	}
 }

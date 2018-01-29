@@ -7,7 +7,7 @@ Vue.component('blog-articles', {
           <p v-if='dateWithArticles.length > 0' class='date'>{{ date }} &nbsp; <button @click="addArticle(date)">+</button></p>
           <div v-for='article in dateWithArticles' class='article'>
             <span class='dot'></span>
-            <p class='article-date'>{{ article.published_at }}</p>
+            <p class='article-date'>{{ article.date }}</p>
             <h3><a :href="'#' + article.slug">{{ article.title }}</a></h3>
             <p>{{ article.teaser }}</p>
           </div>
@@ -67,7 +67,8 @@ new Vue({
     newSlug:'slug',
     newTeaser:'teaser',
     newTitle:'title',
-    datesArticles: {
+    newSubject:'subject',
+    datesArticles : {
       '그림그리기': [
         {
           title: '그림을 그리기 시작',
@@ -120,7 +121,7 @@ new Vue({
 			slug: this.newSlug,
 			teaser: this.newTeaser,
 			date: this.newDate,
-			username : "degan"
+			subject: this.newSubject
     	};
     	
     	$.ajax({
@@ -132,10 +133,12 @@ new Vue({
             cache: false,
             timeout: 600000,
             success: function (data) {
-            	alert('success!!');
+//            	this.showList();
+//            	alert('success!!');
             	console.log(data);
             },
             error: function (e) {
+            	alert('error?');
             }
         });
     },
@@ -143,9 +146,10 @@ new Vue({
       data.addArticle = data.settings[index];
     },
     showList() {
+    	let self = this;
     	let username = {}
-        username["username"] = 'degan';
-    	
+        username["username"] = '';
+    	this.datesArticles = {};
     	$.ajax({
             type: "POST",
             contentType: "application/json",
@@ -155,7 +159,20 @@ new Vue({
             cache: false,
             timeout: 600000,
             success: function (data) {
-            	alert('success!!');
+            	resultData = data;
+            	let tmpData = {}
+            	for(let i=0;i < data.result.length; i++) {
+            		let tmp = tmpData[data.result[i].subject];
+            		
+            		if(tmp == null){
+            			tmpData[data.result[i].subject] = [];
+            		}
+        			for(let articleNum = 0; articleNum < data.result[i].articles.length; articleNum++){
+        				tmpData[data.result[i].subject].push(data.result[i].articles[articleNum]);
+            		}
+            	}
+            	self.datesArticles = tmpData;
+            	tmpData2 = tmpData;
             	console.log(data);
             },
             error: function (e) {
@@ -164,4 +181,6 @@ new Vue({
     }
   }
 });
+var resultData;
+var tmpData2;
 

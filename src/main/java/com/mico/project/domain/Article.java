@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import lombok.Data;
 import lombok.Getter;
@@ -23,7 +24,10 @@ public class Article {
 	  private String slug;
 	  private String teaser;
 	  private String date;
-
+	  
+	  @Transient
+	  private String subject;
+	  
 	  public Article(String title, String slug, String teaser, String date){
 	    this.title = title;
 	    this.slug = slug;

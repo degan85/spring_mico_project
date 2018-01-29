@@ -36,7 +36,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
       			, "/registration"
       			, "/error"
       			, "/api/**"
-      			, "/timeline/**"
       			).permitAll()
         // admin 폴더에 경우 admin 권한이 있는 사용자에게만 허용 
       	.antMatchers("/admin/**").hasAuthority("ADMIN")
